@@ -1,0 +1,7 @@
+*.ts
+YOLO3-4-Py
+darknet
+data
+yolo
+.vscode
+.DS_Store
