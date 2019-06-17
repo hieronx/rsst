@@ -1,7 +1,8 @@
 *.ts
-YOLO3-4-Py
-darknet
-data
-yolo
+frames
 .vscode
 .DS_Store
+etc
+__pycache__
+out
+data/weights/*
