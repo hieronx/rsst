@@ -2,10 +2,12 @@
 import logging
 import sys
 import streamlink
+import numpy as np
 import os.path
 from time import time
 import cv2
-from detect import detect
+
+FONT = cv2.FONT_HERSHEY_SIMPLEX
 
 log = logging.getLogger(__name__)
 
@@ -34,7 +36,10 @@ def main(webcam):
             ret, frame = cap.read()
             if ret:
                 print('Parsing...')
-                detect(frame, 'out/' + webcam + '_' + str(int(time())) + '.png', 608)
+                variance = str(round(np.var(frame), 3))
+                res = cv2.resize(frame, (800, 450))
+                cv2.putText(res, variance, (100, 100), FONT, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
+                cv2.imshow('download_output', res)
                     
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break

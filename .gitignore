@@ -6,3 +6,5 @@ etc
 __pycache__
 out
 data/weights/*
+people
+people_*
