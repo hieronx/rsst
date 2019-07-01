@@ -25,7 +25,7 @@ def sliding_window(image, step_size, window_size):
 			# yield the current window
 			yield (x, y, image[y:y + window_size[1], x:x + window_size[0]])
 
-person_idx = 92
+person_idx = 10029
 
 def detect(img, out_file, steps):
     def predict(frame):
@@ -95,8 +95,8 @@ def detect(img, out_file, steps):
 
         window = predict(window)
 
-        combined[int(fromY):toY, int(fromX):toX] = window
-        cv2.imwrite(str(out_file), combined)
+        # combined[int(fromY):toY, int(fromX):toX] = window
+        # cv2.imwrite(str(out_file), combined)
 
         # resized = cv2.resize(combined, (800, 450))
         # cv2.imshow('output', resized)
